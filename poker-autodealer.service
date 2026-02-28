@@ -1,0 +1,14 @@
+[Unit]
+Description=Signal Poker Auto Dealer
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/clawd/poker
+Environment=POKER_GROUP_ID=+Q5owGt5OrZHDd8TdsQKhHuLeVQfNTsgP2wauSBknYA=
+ExecStart=/usr/bin/env python3 -u %h/clawd/poker/auto_dealer.py
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=default.target
